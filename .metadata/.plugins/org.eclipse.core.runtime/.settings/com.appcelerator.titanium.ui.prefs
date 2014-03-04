@@ -1,6 +1,8 @@
 =run
 CollinsChris_Project1\:launchMode=run
-CollinsChris_Project1\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.launchShortcut
+CollinsChris_Project1\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (3.5 inch)
+Collins_Chris_Project1\:launchMode=run
+Collins_Chris_Project1\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.launchShortcut
 LAST_LAUNCH_TIMESTAMP=1393906126365
 Test\ Assignment\ 1\:launchMode=run
 Test\ Assignment\ 1\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch)
