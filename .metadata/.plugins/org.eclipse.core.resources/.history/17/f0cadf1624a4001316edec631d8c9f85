@@ -22,11 +22,11 @@ var myFirstView = Ti.UI.createView({
 });
 
 var myText = Ti.UI.createLabel({
-	text: "Chuck Norris Facts",
+	text: "I love Christi!",
 	color: "9DC02E",
-	font: {fontSize: 20, fontFamily: "HelveticaNeueBold", fontWeight: "Bold"},
+	font: {fontSize: 14, fontFamily: "HelveticaNeueBold", fontWeight: "Bold"},
 	top: "50%",
-	textAlign: "center"
+	Left: "40%"
 });
 
 var mySecondView = Ti.UI.createView({
@@ -41,57 +41,32 @@ var mySecondView = Ti.UI.createView({
 	zIndex: 8
 });
 
-var factOne = Ti.UI.createLabel({
-	text: '"When the Boogeyman goes to sleep every night, he checks his closet for Chuck Norris."',
-	color: "#F2F2F2",
-	font: {fontSize: 16, fontFamily: "HelveticaNeue"},
-	left: "5%",
-	right: "5%",
-	textAlign: "center"
-});
-
 
 var nextLabelView = Ti.UI.createView({
 	backgroundColor: "#9DC02E",
-	borderColor: "Black",
+	borderColor: "#3F3F41",
 	borderRadius: 5,
 	borderWidth: 1,
 	height: "6%",
-	width: "30%",
+	width: "22.5%",
 	bottom: "2%",
 	left: "15%",
 	zIndex: 9
 });
 
-var nextLabel = Ti.UI.createLabel({
-	text: "Next",
-	color: "#37468B",
-	font: {fontSize: 18, fontFamily: "HelveticaNeueBold", fontWeight: "Bold"},
-	zIndex: 9
-});
-
 var previousLabelView = Ti.UI.createView({
 	backgroundColor: "#9DC02E",
-	borderColor: "Black",
+	borderColor: "#3F3F41",
 	borderRadius: 5,
 	borderWidth: 1,
 	height: "6%",
-	width: "30%",
+	width: "22.5%",
 	bottom: "2%",
 	right: "15%",
 	zIndex: 9
 });
 
-var previousLabel = Ti.UI.createLabel({
-	text: "Previous",
-	color: "#37468B",
-	font: {fontSize: 18, fontFamily: "HelveticaNeueBold", fontWeight: "Bold"},
-	zIndex: 9
-});
 
-
-mainWindow.add(myFirstView, mySecondView, factOne, nextLabel, previousLabel, nextLabelView, previousLabelView); 
+mainWindow.add(myFirstView, mySecondView, nextLabelView, previousLabelView); 
 myFirstView.add(myText);
-nextLabelView.add(nextLabel);
-previousLabelView.add(previousLabel);
 mainWindow.open();

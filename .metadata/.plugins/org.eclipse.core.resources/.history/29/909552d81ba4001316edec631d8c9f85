@@ -1,0 +1,48 @@
+Ti.UI.setBackgroundColor("#000");
+
+
+var mainWindow = Ti.UI.createWindow({
+	title: "Window One",
+	backgroundColor: "#fff",
+	backgroundImage: "Images/wood.jpg",
+	
+	
+});
+
+var myFirstView = Ti.UI.createView({
+	backgroundColor: "#3F3F41",
+	borderColor: "#3F3F41",
+	borderRadius: 5,
+	borderWidth: 1,
+	height: 80,
+	top: 0,
+	left: 0,
+	right: 0,
+	
+});
+
+
+
+var mySecondView = Ti.UI.createView({
+	backgroundColor: "#3F3F41",
+	borderColor: "#3F3F41",
+	borderRadius: 5,
+	borderWidth: 1,
+	height: 80,
+	bottom: 0,
+	left: 0,
+	right: 0,
+	zIndex: 9
+});
+
+var myText = Ti.UI.createlabel({
+	text: "I love Christi!",
+	color: "9DC02E",
+	font: {fontSize: 14, fontFamily: "HelveticaNeue", fontWeight: "bold"},
+	top: 20,
+	Left: 10,
+});
+
+mainWindow.add(myFirstView, mySecondView); 
+myFirstView.add(myText);
+mainWindow.open();

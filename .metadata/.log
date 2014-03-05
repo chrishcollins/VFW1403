@@ -508,3 +508,6 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86 -data /Users/chriscollin
 !MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.run_on_device.android'
 !SUBENTRY 1 org.eclipse.ui 2 0 2014-03-04 16:05:16.784
 !MESSAGE Cannot bind to an undefined command: plug-in='com.appcelerator.titanium.android.ui', id='com.appcelerator.titanium.mobile.command.debug_on_device.android'
+
+!ENTRY com.appcelerator.titanium.android.core 4 0 2014-03-04 16:06:46.086
+!MESSAGE There are no Android devices connected

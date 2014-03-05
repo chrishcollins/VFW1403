@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.collinsChris.p1</id>
-    <name>CollinsChris_Project1</name>
+    <id>com.chris.collins</id>
+    <name>test</name>
     <version>1.0</version>
     <publisher>chriscollins</publisher>
     <url>http://</url>
@@ -11,7 +11,7 @@
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>c9239a65-7406-4cc6-9563-f0526344fc22</guid>
+    <guid>fa48d97c-8a97-4998-aedc-5ca24f545759</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
         <plist>

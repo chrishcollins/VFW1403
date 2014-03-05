@@ -41,15 +41,6 @@ var mySecondView = Ti.UI.createView({
 	zIndex: 8
 });
 
-var factOne = Ti.UI.createLabel({
-	text: '"When the Boogeyman goes to sleep every night, he checks his closet for Chuck Norris."',
-	color: "#F2F2F2",
-	font: {fontSize: 16, fontFamily: "HelveticaNeue"},
-	left: "5%",
-	right: "5%",
-	textAlign: "center"
-});
-
 
 var nextLabelView = Ti.UI.createView({
 	backgroundColor: "#9DC02E",
@@ -90,7 +81,7 @@ var previousLabel = Ti.UI.createLabel({
 });
 
 
-mainWindow.add(myFirstView, mySecondView, factOne, nextLabel, previousLabel, nextLabelView, previousLabelView); 
+mainWindow.add(myFirstView, mySecondView, nextLabel, previousLabel, nextLabelView, previousLabelView); 
 myFirstView.add(myText);
 nextLabelView.add(nextLabel);
 previousLabelView.add(previousLabel);
