@@ -1,0 +1,31 @@
+var facts = ["1.  When the Boogeyman goes to sleep every night, he checks his closet for Chuck Norris.", "2.  Chuck Norris counted to infinity - twice.", "3.  There used to be a street named after Chuck Norris, but it was changed because nobody crosses Chuck Norris and lives.", "4.  Chuck Norris is the reason why Waldo is hiding.", "5.  The quickest way to a mans heart is with Chuck Norris fist.", "6.  Chuck Norris destroyed the periodic table, because Chuck Norris only recognizes the element of surprise.", "7.  Chuck Norris can cut through a hot knife with butter."];
+
+
+var nextFact = 
+
+//var i =0;
+
+
+//var nextFact = function(){
+	//if(i<0){
+		//factLabel.text = facts[2];
+	//	i++;
+//	} else{
+//		factLabel.text = facts[i];
+//		i++;
+//	}
+//};
+
+
+//var previousFact = function(){
+//	if(i<0){
+//		factLabel.text = facts[2];
+//		i--;
+//	} else{
+//		factLabel.text = facts[i];
+//		i--;
+//	}
+//};/*
+
+nextLabelView.addEventListener("click", nextFact);
+previousLabelView.addEventListener("click", previousFact);

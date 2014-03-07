@@ -2,14 +2,25 @@ Ti.UI.setBackgroundColor("#000");
 
 
 var mainWindow = Ti.UI.createWindow({
-	title: "Window One",
 	backgroundColor: "#fff",
 	backgroundImage: "Images/wood.jpg",
 	
 	
 });
 
-var myFirstView = Ti.UI.createView({
+var logoImage = Ti.UI.createView({
+	backgroundImage: "Images/Chuck_Norris.png",
+	height: "25%",
+	width: "25%",
+	top: "16%",
+	right: "5%",
+	
+	
+});
+
+
+
+var headerView = Ti.UI.createView({
 	backgroundColor: "#3F3F41",
 	borderColor: "#3F3F41",
 	borderRadius: 5,
@@ -17,11 +28,11 @@ var myFirstView = Ti.UI.createView({
 	height: "14%",
 	top: "0%",
 	left: "0%",
-	right: "0%",
+	right: "0%"
 	
 });
 
-var myText = Ti.UI.createLabel({
+var headerText = Ti.UI.createLabel({
 	text: "Chuck Norris Facts",
 	color: "9DC02E",
 	font: {fontSize: 20, fontFamily: "HelveticaNeueBold", fontWeight: "Bold"},
@@ -29,7 +40,9 @@ var myText = Ti.UI.createLabel({
 	textAlign: "center"
 });
 
-var mySecondView = Ti.UI.createView({
+
+
+var footerView = Ti.UI.createView({
 	backgroundColor: "#3F3F41",
 	borderColor: "#3F3F41",
 	borderRadius: 5,
@@ -38,39 +51,37 @@ var mySecondView = Ti.UI.createView({
 	bottom: "0%",
 	left: "0%",
 	right: "0%",
-	zIndex: 8
+	
 });
 
-var factOne = Ti.UI.createLabel({
-	text: '"When the Boogeyman goes to sleep every night, he checks his closet for Chuck Norris."',
+
+
+
+var factView = Ti.UI.createView({
+	backgroundColor: "000",
+	borderRadius: 5,
+	borderWidth: 1,
+	height: "30%",
+	top: "35%",
+	left: "0%",
+	right: "0%",
+	
+});
+
+
+
+var factText = Ti.UI.createLabel({
+	text: 'Click next to begin.',
 	color: "#F2F2F2",
 	font: {fontSize: 16, fontFamily: "HelveticaNeue"},
 	left: "5%",
 	right: "5%",
-	textAlign: "center"
+	textAlign: "center",
+	
 });
 
 
-var nextLabelView = Ti.UI.createView({
-	backgroundColor: "#9DC02E",
-	borderColor: "Black",
-	borderRadius: 5,
-	borderWidth: 1,
-	height: "6%",
-	width: "30%",
-	bottom: "2%",
-	left: "15%",
-	zIndex: 9
-});
-
-var nextLabel = Ti.UI.createLabel({
-	text: "Next",
-	color: "#37468B",
-	font: {fontSize: 18, fontFamily: "HelveticaNeueBold", fontWeight: "Bold"},
-	zIndex: 9
-});
-
-var previousLabelView = Ti.UI.createView({
+var nextButtonView = Ti.UI.createView({
 	backgroundColor: "#9DC02E",
 	borderColor: "Black",
 	borderRadius: 5,
@@ -79,19 +90,43 @@ var previousLabelView = Ti.UI.createView({
 	width: "30%",
 	bottom: "2%",
 	right: "15%",
-	zIndex: 9
+	
 });
 
-var previousLabel = Ti.UI.createLabel({
+var nextButtonText = Ti.UI.createLabel({
+	text: "Next",
+	color: "#37468B",
+	font: {fontSize: 18, fontFamily: "HelveticaNeueBold", fontWeight: "Bold"},
+	
+});
+
+
+ 
+
+var previousButtonView = Ti.UI.createView({
+	backgroundColor: "#9DC02E",
+	borderColor: "Black",
+	borderRadius: 5,
+	borderWidth: 1,
+	height: "6%",
+	width: "30%",
+	bottom: "2%",
+	left: "15%",
+	
+});
+
+var previousButtonText = Ti.UI.createLabel({
 	text: "Previous",
 	color: "#37468B",
 	font: {fontSize: 18, fontFamily: "HelveticaNeueBold", fontWeight: "Bold"},
-	zIndex: 9
+	
 });
 
+var loadFile = require("NorrisFacts");
 
-mainWindow.add(myFirstView, mySecondView, factOne, nextLabel, previousLabel, nextLabelView, previousLabelView); 
-myFirstView.add(myText);
-nextLabelView.add(nextLabel);
-previousLabelView.add(previousLabel);
+mainWindow.add(headerView, footerView, factView, nextButtonView, previousButtonView, logoImage); 
+headerView.add(headerText);
+factView.add(factText);
+nextButtonView.add(nextButtonText);
+previousButtonView.add(previousButtonText);
 mainWindow.open();
