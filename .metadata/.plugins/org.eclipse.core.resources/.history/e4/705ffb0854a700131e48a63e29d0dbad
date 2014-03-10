@@ -1,0 +1,123 @@
+Titanium.UI.setBackgroundColor("#000");
+
+
+var artistsNorth = [
+{title: "Andy Mineo", bio: "It is absolutely undeniable that hip hop is becoming the universal language,” Mineo says expressing an unbridled enthusiasm for his artistic vehicle. “It’s so influential because you are able to say so much in a short period of time. The essence of hip hop is the boldness of it so you’re able to be exactly who you are. You are able to say exactly what you want. You represent exactly what is deepest and dearest to you and people respond to that. They respond to that realness."}, 
+{title: "Trip Lee", bio: "a"}, 
+{title: "KB", bio: ""}
+];
+
+var artistsSouth = [
+{title: "Lecrae", bio: ""}, 
+{title: "Tedashii", bio: ""}, 
+{title: "Derek Minor", bio: ""}
+];
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "white"
+});
+
+var titleView = Ti.UI.createView({
+	height: 65,
+	backgroundColor: "#fff",
+	top: 0
+	
+});
+
+var border = Ti.UI.createView({
+	backgroundColor: "dbdbdb",
+	height: 1,
+	top: titleView.height + titleView.top
+});
+
+var titleLabel = Ti.UI.createLabel({
+	text: "Hip Hop Artists",
+	font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
+	top: 30,
+	width: "100%",
+	textAlign: "center"
+});
+
+var artistsTable = Ti.UI.createTableView({ //do i need this section here?
+	data: artistsNorth,
+	top: border.top + border.height
+});
+
+if(Ti.Platform.name === "iPhone OS"){
+	artistsTable.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+}
+
+var artistsNorthSection = Ti.UI.createTableViewSection({
+	headerTitle: "Northern Rappers",
+	footerTitle: "Artists from NYC, Philly, & Illinois"
+});
+
+var artistsSouthSection = Ti.UI.createTableViewSection({
+	headerTitle: "Southern Rappers",
+	footerTitle: "Artists from ATL, Houston, & Tennessee"
+});
+
+for(var i=0, j=artistsNorth.length; i<j; i++){
+	var row = Ti.UI.createTableViewRow({
+		title: artistsNorth[i].title,
+		hasChild: true,
+		 		
+	});
+	
+	if(Ti.Platform.name === "iPhone OS"){
+	row.hasChild = false; 
+	row.hasDetail = true; //hasDetail supported by iOS letting user know there is additonal information.
+}
+
+	artistsNorthSection.add(row);
+};
+var openBio = function(){
+	var bioWindow = Ti.UI.createWindow ({
+		backgroundColor: "f5f5f5",
+		
+	});
+		var biotitleView = Ti.UI.createView({
+		height: 65,
+		backgroundColor: "#fff",
+		top: 0
+		
+	});
+	
+	var bioborder = Ti.UI.createView({
+		backgroundColor: "dbdbdb",
+		height: 1,
+		top: biotitleView.height + bioTitleView.top
+	});
+	
+	var bioTitleLabel = Ti.UI.createLabel({
+		text: this.title,   //"this" is a reserved object in js.  It will always reference back to the object that called the function.
+		font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
+		top: 30,
+		width: "100%",
+		textAlign: "center"
+	});
+	
+	bioTitleView.add(bioTitleLabel);
+	openBio.add(bioTitleView, detailBorder);
+	
+	openBio.open();
+};
+
+for(var i=0, j=artistsSouth.length; i<j; i++){
+	var row = Ti.UI.createTableViewRow({
+		title: artistsSouth[i].title		
+	});
+	
+	artistsSouthSection.add(row);
+	row.addEventListener("click", openBio);
+};
+
+var artistsSections = [artistsNorthSection, artistsSouthSection];
+
+artistsTable.setData(artistsSections); //you can also bring down the line above and do this artistsTable.setData([artistsNorthSection, artistsSouthSection]);
+
+//artistsTable.setData(artists); can set or define data to the table here if you don't define within the tableView itself
+//.setData() will only accept an array data type.
+titleView.add(titleLabel);
+mainWindow.add(titleView, border, artistsTable);
+mainWindow.open();

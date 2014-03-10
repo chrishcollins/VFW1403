@@ -1,0 +1,44 @@
+Titanium.UI.setBackgroundColor("#000");
+
+
+var artists = [{title: "Andy Mineo"}, {title: "Trip Lee"}, {title: "KB"}, {title: "Lecrae"}, {title: "Tedashii"}, {title: "Derek Minor"}];
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "white"
+});
+
+var titleView = Ti.UI.createView({
+	height: 65,
+	backgroundColor: "#fff",
+	top: 0
+	
+});
+
+var border = Ti.UI.createView({
+	backgroundColor: "dbdbdb",
+	height: 1,
+	top: titleView.height + titleView.top
+});
+
+var titleLabel = Ti.UI.createLabel({
+	text: "Hip Hop Artists",
+	font: {fontSize: 20, fontFamily: "Arial", fontWeight: "bold"},
+	top: 30,
+	width: "100%",
+	textAlign: "center"
+});
+
+var artistsTable = Ti.UI.createTableView({
+	data: artists,
+	top: border.top + border.height
+});
+
+if(Ti.platform.name = "iPhone OS"){
+	ships.style = Ti.UI.iPhone.tableViewStyle.GROUPED;
+}
+
+//artistsTable.setData(artists); can set or define data to the table here if you don't define within the tableView itself
+
+titleView.add(titleLabel);
+mainWindow.add(titleView, border, artistsTable);
+mainWindow.open();
