@@ -1,12 +1,13 @@
-Titanium.UI.setBackgroundColor('#000');
+
 var mainWindow = Ti.UI.createWindow({
 	title: "Artists",
+	style:Titanium.UI.iPhone.TableViewStyle.GROUPED
 });
 
+mainWindow.backgroundColor = "black";
 
 var navWindow = Ti.UI.iOS.createNavigationWindow({
-	window: mainWindow,
-	style:Titanium.UI.iPhone.TableViewStyle.GROUPED
+	window: mainWindow
 });
 
 var loadFile = require("rapartists");

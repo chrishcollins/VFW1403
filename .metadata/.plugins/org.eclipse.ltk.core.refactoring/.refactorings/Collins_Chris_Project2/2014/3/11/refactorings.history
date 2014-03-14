@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Collins_Chris_Project2/Resources/artists.js&apos; to &apos;rapartists.js&apos;" description="Rename resource &apos;artists.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Resources/artists.js" name="rapartists.js" stamp="1394758291107" updateReferences="true"/>
+</session>
