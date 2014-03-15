@@ -1,0 +1,35 @@
+Logger started at: Saturday, March 15, 2014 5:31:42 PM EDT
+Component: com.appcelerator.titanium.ios.core
+Version: 1.0.0.1388991145
+[31:42.428] Sent: >21*1394919102419*version<
+[31:42.429] Recv: >1394919102419*2*3.2.2.GA<
+[31:42.436] Sent: >20*1394919102420*update<
+[31:42.437] Recv: >1394919102420*3.2.2.GA<
+[31:42.437] Sent: >45*1394919102421*option*stepFiltersEnabled*false<
+[31:42.438] Recv: >1394919102421<
+[31:42.438] Sent: >36*1394919102422*option*monitorXHR*true<
+[31:42.438] Recv: >1394919102422<
+[31:42.439] Sent: >45*1394919102423*option*suspendOnFirstLine*false<
+[31:42.439] Recv: >1394919102423<
+[31:42.439] Sent: >46*1394919102424*option*suspendOnExceptions*false<
+[31:42.439] Recv: >1394919102424<
+[31:42.440] Sent: >41*1394919102425*option*suspendOnErrors*true<
+[31:42.440] Recv: >1394919102425<
+[31:42.440] Sent: >43*1394919102426*option*suspendOnKeywords*true<
+[31:42.440] Recv: >1394919102426<
+[31:42.441] Sent: >45*1394919102427*option*bypassConstructors*false<
+[31:42.441] Recv: >1394919102427<
+[31:42.441] Sent: >45*1394919102428*option*stepFiltersEnabled*false<
+[31:42.441] Recv: >1394919102428<
+[31:42.441] Sent: >30*1394919102429*detailFormatters<
+[31:42.442] Recv: >1394919102429<
+[31:42.442] Sent: >20*1394919102430*enable<
+[31:42.442] Recv: >1394919102430<
+[31:42.444] Recv: >threads*created*0*kroll$1<
+[31:42.446] Recv: >log*out*[DEBUG] Analytics is enabled = YES<
+[31:42.447] Recv: >log*out*[DEBUG] Loading: /Users/chriscollins/Library/Application Support/iPhone Simulator/7.1/Applications/5790A93E-E195-4622-A653-7B4CA1693FF9/Collins_Chris_Project3.app/app.js, Resource: app_js<
+[31:42.447] Recv: >scripts*created*334551584|app:/app.js||1|55<
+[31:42.448] Recv: >resumed*0*started<
+[31:42.449] Recv: >log*out*[DEBUG] Loading: /Users/chriscollins/Library/Application Support/iPhone Simulator/7.1/Applications/5790A93E-E195-4622-A653-7B4CA1693FF9/Collins_Chris_Project3.app/_app_props_.json, Resource: _app_props__json<
+[31:42.550] Recv: >log*out*[DEBUG] Application booted in 165.881991 ms<
+----------End of file----------

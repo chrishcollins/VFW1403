@@ -1,6 +1,10 @@
+var imagesFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "Images");
+var imageFiles = imagesFolder.getDirectoryListing();
+console.log(imageFiles);
+
 var pWidth = Ti.Platform.displayCaps.platformWidth;
 var pHeight = Ti.Platform.displayCaps.platformHeight;
-var imageFiles = ["Ambassador.jpg", "AndyMineo.jpg", "DaTRUTH.jpg", "DerekMinor.jpg", "Flame.jpg", "KB.jpg", "Kdrama.jpg", "Lecrae.jpg", "Manafest.jpg", "Propaganda.jpg", "sho-baraka.jpg", "tedashii.jpg", "TripLee.jpg"];
+//var imageFiles = ["Ambassador.jpg", "AndyMineo.jpg", "DaTRUTH.jpg", "DerekMinor.jpg", "Flame.jpg", "KB.jpg", "disciple.jpg", "Lecrae.jpg", "Manafest.jpg", "Propaganda.jpg", "sho-baraka.jpg", "tedashii.jpg", "TripLee.jpg", "Lifehouse.jpg", "Pillar.jpg", "RED.jpg", "skillet.jpg", "switchfoot.jpg", "TheLetterBlack.jpg"];
 //var itemCount = 30;  Do not need.  Will us length of array.
 var rowCount = 4;
 var margin = 10;
@@ -29,7 +33,7 @@ var viewContainer = Ti.UI.createScrollView({
 	backgroundColor: "transparent",
 });
 
-for(var i=0; i<imageFiles; i++){
+for(var i=0; i<imageFiles.length; i++){
 	var view = Ti.UI.createView({
 		backgroundColor: "#33CCFF",
 		borderColor: "transparent",
@@ -44,8 +48,8 @@ for(var i=0; i<imageFiles; i++){
 		image: "images/" + imageFiles[i]
 	});
 	view.add(newImage);
-	var text = Ti.UI.createLabel({text: i+1, color: "#fff"});
-	view.add(text);
+	//var text = Ti.UI.createLabel({text: i+1, color: "#fff"});
+	//view.add(text);
 	viewContainer.add(view);
 }
 
