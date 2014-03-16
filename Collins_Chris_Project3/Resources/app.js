@@ -1,11 +1,26 @@
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "black",
+	backgroundImage: "Images/dark-fabric.png",
+	top: 10	
+});
+
+var border = Ti.UI.createView({
+	backgroundColor: "transparent",
+	height: 1,
+	width: pWidth,
+	top: 20
+});
+
+
+
+
 var imagesFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "Images");
 var imageFiles = imagesFolder.getDirectoryListing();
-console.log(imageFiles);
 
+console.log(imageFiles);
+//layout logic
 var pWidth = Ti.Platform.displayCaps.platformWidth;
 var pHeight = Ti.Platform.displayCaps.platformHeight;
-//var imageFiles = ["Ambassador.jpg", "AndyMineo.jpg", "DaTRUTH.jpg", "DerekMinor.jpg", "Flame.jpg", "KB.jpg", "disciple.jpg", "Lecrae.jpg", "Manafest.jpg", "Propaganda.jpg", "sho-baraka.jpg", "tedashii.jpg", "TripLee.jpg", "Lifehouse.jpg", "Pillar.jpg", "RED.jpg", "skillet.jpg", "switchfoot.jpg", "TheLetterBlack.jpg"];
-//var itemCount = 30;  Do not need.  Will us length of array.
 var rowCount = 4;
 var margin = 10;
 var trueCanvasWidth = (pWidth-(margin * (rowCount + 1))); //width of device minus all of the spaces
@@ -13,7 +28,8 @@ var imageSize = (trueCanvasWidth / rowCount); //size determines the size of all 
 
 var mainWin = Ti.UI.createWindow({
 	backgroundImage: "Images/dark-fabric.png",
-	layout: "horizontal"	
+	layout: "horizontal",
+	top: 10	
 });
 
 var border = Ti.UI.createView({
@@ -24,7 +40,7 @@ var border = Ti.UI.createView({
 });
 
 var viewContainer = Ti.UI.createScrollView({
-	top: 0,
+	top: 0, //0 because of the horizontal layout
 	layout: "horizontal",
 	width: pWidth,
 	contentWidth: pWidth,  //scrollable area
@@ -35,7 +51,7 @@ var viewContainer = Ti.UI.createScrollView({
 
 for(var i=0; i<imageFiles.length; i++){
 	var view = Ti.UI.createView({
-		backgroundColor: "#33CCFF",
+		backgroundColor: "transparent",
 		borderColor: "transparent",
 		borderSize: 1,
 		borderRadius: 5,
@@ -45,7 +61,14 @@ for(var i=0; i<imageFiles.length; i++){
 		height: imageSize	
 	});
 	var newImage = Ti.UI.createImageView({
-		image: "images/" + imageFiles[i]
+		image: "images/" + imageFiles[i],
+		top: 0,
+		height: 100,
+  		width: 100,
+ 		hires: true,
+		contentMode: 'aspectfill',
+  		clipsToBounds: true,
+  
 	});
 	view.add(newImage);
 	//var text = Ti.UI.createLabel({text: i+1, color: "#fff"});
