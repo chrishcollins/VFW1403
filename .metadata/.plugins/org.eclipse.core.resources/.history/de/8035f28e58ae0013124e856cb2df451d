@@ -1,0 +1,131 @@
+Ti.UI.setBackgroundColor("white");
+//Ti.UI.setBackgroundImage("OtherImages/dark-fabric.png");
+
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor: "#fff",
+	backgroundImage: "OtherImages/dark-fabric.png",
+	top: 40,	
+});
+
+var mainWinView = Ti.UI.createView({
+	backgroundImage: "OtherImages/Header-Title-View.png",
+	top: 0,
+	height: 88
+});
+
+
+var enterButton = Ti.UI.createButton({
+	backgroundImage: "OtherImages/button_dark.png",
+	backgroundSelectedImage: "OtherImages/button_dark_push.png",
+	height: 300,
+	width: 400
+});
+
+mainWindow.add(enterButton,mainWinView);
+
+var galleryWin = Ti.UI.createWindow({
+	backgroundColor: "#fff",
+	backgroundImage: "OtherImages/dark-fabric.png",
+	top: 40,
+	bottom: 0,
+	title: "Artist Photos",
+	color: "orange"
+});
+
+var galleryView = Ti.UI.createView({
+	backgroundColor: "black",
+	top: 0,
+	height: 40
+});
+
+var galleryLabel = Ti.UI.createLabel({
+	text: "Artist Gallery",
+	color: "White",
+	font: {fontSize: 16, fontFamily: "Helvetica", fontWeight: "light"},
+});
+
+galleryView.add(galleryLabel);
+
+var openGallery = function(){
+	galleryWin.open();
+};
+
+var border = Ti.UI.createView({
+	backgroundColor: "transparent",
+	height: 1,
+	width: pWidth,
+	top: 20
+});
+
+var imagesFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "Images");
+var imageFiles = imagesFolder.getDirectoryListing();
+
+console.log(imageFiles);
+
+//layout logic
+var pWidth = Ti.Platform.displayCaps.platformWidth;
+var pHeight = Ti.Platform.displayCaps.platformHeight;
+var rowCount = 4;
+var margin = 10;
+var trueCanvasWidth = (pWidth-(margin * (rowCount + 1))); //width of device minus all of the spaces
+var imageSize = (trueCanvasWidth / rowCount); //size determines the size of all of the elements so that they fit in the row and have space between them.
+
+
+
+
+var viewContainer = Ti.UI.createScrollView({
+	top: 0, //0 because of the horizontal layout
+	bottom: 40,
+	layout: "horizontal",
+	width: pWidth,
+	contentWidth: pWidth,  //scrollable area
+	height: pHeight - border.height - border.top,
+	showVerticalScrollIndicator: true, //Boolean 
+	backgroundColor: "transparent",
+});
+
+for(var i=0; i<imageFiles.length; i++){
+	var view = Ti.UI.createView({
+		backgroundColor: "transparent",
+		borderColor: "transparent",
+		borderSize: 1,
+		borderRadius: 5,
+		top: margin,
+		left: margin,
+		width: imageSize,
+		height: imageSize	
+	});
+	var newImage = Ti.UI.createImageView({
+		image: "images/" + imageFiles[i],
+		top: 0,
+		height: 100,
+  		width: 100,
+ 		hires: true,
+		contentMode: 'aspectfill',
+  		clipsToBounds: true,
+  
+	});
+	view.add(newImage);
+	//var text = Ti.UI.createLabel({text: i+1, color: "#fff"});
+	//view.add(text);
+	viewContainer.add(view);
+}
+
+var closeButton = Ti.UI.createButton({
+	title: "Close",
+	backgroundColor: "black",
+	height: 35,
+	width: 320,
+	bottom: 0
+});
+
+var closeWin = function(){
+	mainWindow.open();
+};
+
+enterButton.addEventListener("click", openGallery) ;
+closeButton.addEventListener("click", closeWin);
+
+galleryWin.add(viewContainer, border, closeButton, galleryView);
+mainWindow.open();

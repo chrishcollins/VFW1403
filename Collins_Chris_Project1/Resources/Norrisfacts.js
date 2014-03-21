@@ -7,8 +7,7 @@ var next = function(){
 		counter = 0;
 	}
 	
-	factText.text = facts[counter];
-	factView.remove(factText);
+	factView.text = [counter];
 	factView.add(factText);
 	counter ++;
 	
@@ -16,11 +15,10 @@ var next = function(){
 
 var previous = function() {
 	if(counter == facts.length) {
-		counter = -1;
+		counter = 0;
 	} 
 	 
-	factText.text = facts[counter];
-	factView.remove(factText);
+	factView.text = [counter];
 	factView.add(factText);
 	counter --;
 	

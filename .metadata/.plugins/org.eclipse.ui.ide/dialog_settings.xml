@@ -20,6 +20,8 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/chriscollins/Desktop/MDVBS/VFW/Projects/Collins_Chris_Project2"/>
+			<item value="/Users/chriscollins/Desktop/MDVBS/VFW/Projects/Collins_Chris_Project1"/>
 			<item value="/Users/chriscollins/Desktop/MDVBS/VFW/Projects"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
