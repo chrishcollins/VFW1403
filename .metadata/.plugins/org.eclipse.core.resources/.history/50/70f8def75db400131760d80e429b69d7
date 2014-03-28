@@ -1,0 +1,27 @@
+// Create a Button.
+var playersButton = Ti.UI.createButton({
+	backgroundColor: "transparent",
+	backgroundImage: "Images/Clay.jpg",
+	title : 'Players',
+	font : {fontFamily : 'Ariel',fontWeight : 'regular',fontSize : 18},
+	height : 44,
+	width : 250,
+	top : photoButton.top + photoButton.height + 10,
+	left : 0,
+	textAlign: "left"
+});
+mainWindow.add(playersButton);
+
+// Create a Button.
+var otherButton = Ti.UI.createButton({
+	backgroundColor: "transparent",
+	backgroundImage: "Images/Clay.jpg",
+	title : 'Game Trivia',
+	font : {fontFamily : 'Ariel',fontWeight : 'regular',fontSize : 18},
+	height : 44,
+	width : 300,
+	top : playersButton.top + playersButton.height + 10,
+	left : 0,
+	textAlign: "left"
+});
+mainWindow.add(otherButton);

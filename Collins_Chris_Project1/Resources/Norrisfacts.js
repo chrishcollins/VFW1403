@@ -1,26 +1,24 @@
-var facts = ["1.  When the Boogeyman goes to sleep every night, he checks his closet for Chuck Norris.", "2.  Chuck Norris counted to infinity - twice.", "3.  There used to be a street named after Chuck Norris, but it was changed because nobody crosses Chuck Norris and lives.", "4.  Chuck Norris is the reason why Waldo is hiding.", "5.  The quickest way to a mans heart is with Chuck Norris fist.", "6.  Chuck Norris destroyed the periodic table, because Chuck Norris only recognizes the element of surprise.", "7.  Chuck Norris can cut through a hot knife with butter."];
+var facts = ["When the Boogeyman goes to sleep every night, he checks his closet for Chuck Norris.", "Chuck Norris counted to infinity - twice.", "There used to be a street named after Chuck Norris, but it was changed because nobody crosses Chuck Norris and lives.", "Chuck Norris is the reason why Waldo is hiding.", "The quickest way to a mans heart is with Chuck Norris fist.", "Chuck Norris destroyed the periodic table, because Chuck Norris only recognizes the element of surprise.", "Chuck Norris can cut through a hot knife with butter."];
  
-var counter = 0;
+var i = 0;
 
 var next = function(){
-	if(counter == facts.length) {
-		counter = 0;
+	if(factText.text === facts[0]) {
+		i ++;
 	}
-	
-	factView.text = [counter];
+	else(factText.text = facts[i]);
 	factView.add(factText);
-	counter ++;
-	
+	i =0;
 };
 
 var previous = function() {
-	if(counter == facts.length) {
-		counter = 0;
+	if(factText === facts[i]) {
+		 i--;
 	} 
 	 
-	factView.text = [counter];
+	factText.text = facts[0];
 	factView.add(factText);
-	counter --;
+	i = facts.length;
 	
 };
 nextButtonView.addEventListener("click", next);

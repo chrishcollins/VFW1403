@@ -89,7 +89,7 @@ var nextButtonView = Ti.UI.createView({
 	height: "6%",
 	width: "30%",
 	bottom: "2%",
-	right: "15%",
+	left: "5%",
 	
 });
 

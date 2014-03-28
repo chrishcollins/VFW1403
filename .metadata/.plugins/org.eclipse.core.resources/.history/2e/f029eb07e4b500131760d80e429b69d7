@@ -1,0 +1,151 @@
+//var getDetail = function(){
+var playerWindow = Ti.UI.createWindow({
+	statusBarHidden: false,
+	statusBarStyle:Titanium.UI.iPhone.StatusBar.OPAQUE_BLACK,
+	backgroundImage: "Images/RED_HOME.jpg",
+	title: "Historic Players",
+	color: "C6011F",
+	top: 0
+});
+/*
+	var detailText = Ti.UI.createLabel({
+		text: this.details,
+		color: "#fff",
+		top: 30,
+		left: 15,
+		right: 15
+	});
+	playerWindow.add(detailText);
+	navWindow.openWindow(playerWindow);
+}; */
+
+// Create a Button.
+var playersButton = Ti.UI.createButton({
+	backgroundColor: "transparent",
+	backgroundImage: "Images/Clay.jpg",
+	title : 'Players',
+	font : {fontFamily : 'Arial',fontWeight : 'regular',fontSize : 18},
+	height : 44,
+	width : 250,
+	top : photoButton.top + photoButton.height + 10,
+	left : 0,
+	textAlign: "left"
+});
+mainWindow.add(playersButton);
+
+
+playersButton.addEventListener("click", function() {
+	navWindow.openWindow(playerWindow);
+});
+
+// Populate the TableView data.
+var playerSection = Ti.UI.createTableViewSection({
+	headTitle: "Historical Team Players"
+	}); 
+		playerSection.add(Ti.UI.createTableViewRow({title: "Pete Rose"}));
+		playerSection.add(Ti.UI.createTableViewRow({title: "Johnny Bench"}));
+		playerSection.add(Ti.UI.createTableViewRow({title: "Ken Griffey"}));
+
+// Create a TableView.
+var playerView = Ti.UI.createTableView({
+	style:Titanium.UI.iPhone.TableViewStyle.GROUPED,
+    scrollable:false,
+	data: [playerSection]
+	});
+
+// Add to the parent view.
+playerWindow.add(playerView);
+
+playerView.setDetail([playerSection]);
+	
+/*
+var getDetail = function(){
+	var detailWindow = Ti.UI.createWindow({
+		title: this.text,
+		backgroundColor: "transparent",
+		
+			});
+	var detailText = Ti.UI.createLabel({
+		text: this.details,
+		color: "#fff",
+		top: 30,
+		left: 15,
+		right: 15
+	});
+	detailWindow.add(detailText);
+	navWindow.openWindow(detailWindow);
+};
+
+//Table Headers
+var makeUI = function(){
+	var spacing = 88;
+	for(n in artists){
+		var titleLabel = Ti.UI.createLabel({
+		text: artists[n].locationTitle,
+		top: spacing,
+		left: 0,
+		right: 0,
+		height: 25,
+		textAlign: "center",
+		font: {fontSize: 20, fontFamily: "Helvetica", fontWeight: "light"},
+		color: "white",
+		backgroundGradient: {
+        type: 'linear',
+        startPoint: { x: '50%', y: '0%' },
+        endPoint: { x: '50%', y: '100%' },
+        colors: [ { color: '#1AD6FD', offset: 0.0}, { color: '#1D62F0', offset: 1.0 }],
+    }
+		
+});
+	//Names for individual table
+	spacing = titleLabel.top + titleLabel.height + 10;
+	console.log(spacing);
+	for(m in artists[n].artistList){
+		var itemLabel = Ti.UI.createLabel({
+			text: artists[n].artistList[m].name,
+			details: artists[n].artistList[m].description,
+			backgroundColor: "white",
+			transparent: "true",
+			font: {fontSize: 18, fontFamily: "Helvetica", fontWeight: "light"},
+			color: "gray",
+			top: spacing,
+			left: 15,
+			right: 15,
+			height: 25	
+});
+		
+	mainWindow.add(itemLabel);
+		spacing =itemLabel.top + itemLabel.height + 2;
+		itemLabel.addEventListener("click", getDetail);
+	}
+	mainWindow.add(titleLabel);
+	spacing = itemLabel.top + itemLabel.height + 88;
+	
+	//Footer for individual table
+	spacing = itemLabel.top + itemLabel.height + 5;
+	console.log(spacing);
+	for(z in artists){
+		var subLabel = Ti.UI.createLabel({
+		text: artists[n].subTitle,
+		top: spacing,
+		left: 0,
+		right: 0,
+		height: 25,
+		textAlign: "center",
+		font: {fontSize: 16, fontFamily: "Helvetica", fontWeight: "light"},
+		color: "white",
+		backgroundColor: "transparent"	
+});
+		
+	}
+	mainWindow.add(subLabel);
+	spacing = itemLabel.top + itemLabel.height + 80;
+	
+	}
+};
+
+
+
+makeUI();
+*/
+navWindow.open();

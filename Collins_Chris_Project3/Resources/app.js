@@ -8,8 +8,7 @@ var mainWindow = Ti.UI.createWindow({
 	backgroundImage: "OtherImages/metal.png",
 	top: 40,	
 });
-//var navWindow = Ti.UI.iOS.createNavigationWindow({
-//	window: mainWindow
+
 
 var loadFile = require("artists");
 

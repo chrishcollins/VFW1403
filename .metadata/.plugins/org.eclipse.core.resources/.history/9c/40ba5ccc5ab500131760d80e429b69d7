@@ -1,0 +1,79 @@
+
+var otherWindow = Ti.UI.createWindow({
+	statusBarHidden: false,
+	statusBarStyle:Titanium.UI.iPhone.StatusBar.OPAQUE_BLACK,
+	backgroundImage: "Images/Reds.jpg",
+	title: "Game Trivia",
+	color: "C6011F",
+	top: 0,
+	exitOnClose: true
+});
+
+// Create a Button.
+var otherButton = Ti.UI.createButton({
+	backgroundColor: "transparent",
+	backgroundImage: "Images/Clay.jpg",
+	title : 'Game Trivia',
+	font : {fontFamily : 'Ariel',fontWeight : 'regular',fontSize : 18},
+	height : 44,
+	width : 300,
+	top : playersButton.top + playersButton.height + 10,
+	left : 0,
+	textAlign: "left"
+});
+mainWindow.add(otherButton);
+
+otherButton.addEventListener("click", function() {
+	navWindow.openWindow(otherWindow);
+});
+
+//Buttons to clear text field
+var clearButton = Ti.UI.createButton({
+	title: "Clear",
+	height: 24,
+	width: 52
+});
+
+var submitButton = Ti.UI.createButton({
+	title: "Submit",
+	height: 24,
+	width: 60
+});
+
+var qView = Ti.UI.createView({
+	backgroundColor: "white",
+	height: 20,
+	top: 10
+});
+otherWindow.add(qView);
+
+var text1 = Ti.UI.createTextField({
+	top: 40,
+	height: 30,
+	width: 300,
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	hintText: "Enter your answer here.",
+	keyboardType: Titanium.UI.KEYBOARD_DEFAULT,
+	leftButton: clearButton,
+	rightButton: submitButton
+});
+
+clearButton.addEventListener("click", function(e){
+	text1.value = "";
+});
+
+submitButton.addEventListener("click", function(e) {
+	if(text1.value != "") {
+		alert(text1.value);
+	} else {
+		alert("You must enter text.");
+	}
+});
+
+otherWindow.add(text1);
+
+otherWindow.addEventListener("click", function(e){
+	text1.blur();
+});
+
+navWindow.open();

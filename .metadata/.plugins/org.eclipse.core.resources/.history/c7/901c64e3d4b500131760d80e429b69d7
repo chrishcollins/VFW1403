@@ -1,0 +1,143 @@
+// Create a Button.
+var photoButton = Ti.UI.createButton({
+	backgroundColor: "transparent",
+	backgroundImage: "Images/Clay.jpg",
+	title : 'Photos',
+	font : {fontFamily : 'Ariel',fontWeight : 'regular',fontSize : 18},
+	height : 44,
+	width : 200,
+	top : mainView.top + 10,
+	left : 0,
+	textAlign: "left"
+});
+mainWindow.add(photoButton);
+
+
+
+	var galleryWin = Ti.UI.createWindow({
+		statusBarHidden:false,
+		statusBarStyle:Titanium.UI.iPhone.StatusBar.OPAQUE_BLACK,
+		backgroundColor: "#A71930",
+		backgroundImage: "OtherImages/dark-fabric.png",
+		top: 0,
+		bottom: 0,
+		title: "Reds' Photos"
+		});
+		
+photoButton.addEventListener("click", function() {
+	navWindow.openWindow(galleryWin);
+});
+
+//navWindow.openWindow(galleryWin);
+
+var galleryView = Ti.UI.createView({
+	backgroundColor: "#fff",
+	top: 50,
+	height: 350,
+	//contentMode: 'aspectfill',
+	//clipsToBounds: true,
+	//image: "Gallery/" + galleryFiles[0]
+}); 
+galleryWin.add(galleryView);
+
+galleryImage = Ti.UI.createImageView ({
+	image: "Gallery/" + galleryFiles[0]
+});
+
+galleryView.add(galleryImage);
+
+
+var changeImage = Ti.UI.createButton({
+	backgroundColor: "#DBCEAC",
+	title : 'Display Random Image',
+	color : '#000',
+	font : {fontFamily : 'Ariel',fontWeight : 'regular',fontSize : 18},
+	borderRadius: 5,
+	borderWidth: 1,
+	height: "10%",
+	//width: "70%",
+	left: "15%",
+	right: "15%",
+	bottom: "2%",
+	textAlign : 'center'
+});
+
+// Add to the parent view.
+galleryWin.add(changeImage);
+
+ var current = 0;
+
+var random = function() {
+	if(i === galleryFiles.length-1){
+		i = 0;
+		galleryImage.image = galleryFiles[0];
+	}else{
+		i++;
+		galleryImage.image = galleryFiles[i];
+	}
+	console.log(galleryImage.image);
+};
+
+
+
+changeImage.addEventListener("click", function(){
+	random;
+});
+
+
+
+
+
+/* var galleryLabel = Ti.UI.createLabel({
+	text: "Artist Gallery",
+	backgroundColor: "transparent",
+	color: "white",
+	font: {fontSize: 16, fontFamily: "Helvetica", fontWeight: "light"},
+}); */
+
+//galleryView.add(galleryLabel);
+
+/* var openGallery = function(){
+	galleryWin.open();
+}; */
+
+
+
+
+/*
+var changeImage = function(){
+	if(counter === galleryFiles.length-1){
+		counter = 0;
+		galleryView.image = galleryFiles[0];
+	} else {
+		counter ++;
+		galleryView.image = galleryFiles[counter];
+	}
+	console.log(galleryView.image);
+};
+
+var start = function(){
+	alert("Red's Photo Gallery.");
+	change = setInterval(changeImage,4500);
+	status = "start";
+};
+
+var stop = function(){
+	alert("Gallery Stopped.");
+	change = setInterval(changeImage,4500);
+	status = "stop";
+};
+
+var toggle = function(){
+	if(status === "stop"){
+	start();
+	}else{
+		stop();	
+	}
+}; 
+
+// Listen for click events.
+galleryWin.addEventListener('click', toggle);
+	start();
+
+*/

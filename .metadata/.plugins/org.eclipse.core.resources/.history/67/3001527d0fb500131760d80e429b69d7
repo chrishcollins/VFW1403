@@ -1,0 +1,131 @@
+Ti.UI.setBackgroundColor = ("C6011F");
+var mainWindow = Ti.UI.createWindow({
+	statusBarHidden: false,
+	statusBarStyle:Titanium.UI.iPhone.StatusBar.OPAQUE_BLACK,
+	backgroundImage: "Images/baseball-grass.jpg",
+	title: "Cincinnati Reds",
+	color: "C6011F",
+	top: 0
+});
+
+//var counter = 0;
+//var change;
+//var status;
+
+var navWindow = Ti.UI.iOS.createNavigationWindow({
+	window: mainWindow
+});
+
+//gallery files from the Gallery
+var galleryFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "Gallery");//only looks at folder
+var galleryFiles = galleryFolder.getDirectoryListing();//this looks at the files within folder and creates an array
+
+
+var mainView = Ti.UI.createView({
+	backgroundColor: "black",
+	opacity: .1,
+	height: 172,
+	top: 80
+});
+
+var logo = Ti.UI.createView({
+	backgroundImage: "Images/RedsLogo.png",
+	top: 5,
+	height: 80,
+	width: 100,
+	right: 20
+});
+mainWindow.add(mainView, logo);
+
+// Create a Button.
+var photoButton = Ti.UI.createButton({
+	backgroundColor: "transparent",
+	backgroundImage: "Images/Clay.jpg",
+	title : 'Photos',
+	font : {fontFamily : 'Ariel',fontWeight : 'regular',fontSize : 18},
+	height : 44,
+	width : 200,
+	top : mainView.top + 10,
+	left : 0,
+	textAlign: "left"
+});
+mainWindow.add(photoButton);
+
+
+
+	var galleryWin = Ti.UI.createWindow({
+		statusBarHidden:false,
+		statusBarStyle:Titanium.UI.iPhone.StatusBar.OPAQUE_BLACK,
+		backgroundColor: "#A71930",
+		backgroundImage: "OtherImages/dark-fabric.png",
+		top: 0,
+		bottom: 0,
+		title: "Reds' Photos"
+		});
+		
+photoButton.addEventListener("click", function() {
+	navWindow.openWindow(galleryWin);
+});
+
+//navWindow.openWindow(galleryWin);
+
+var galleryView = Ti.UI.createView({
+	backgroundColor: "#fff",
+	top: 50,
+	height: 350,
+	//contentMode: 'aspectfill',
+	//clipsToBounds: true,
+	//image: "Gallery/" + galleryFiles[0]
+}); 
+galleryWin.add(galleryView);
+
+galleryImage = Ti.UI.createImageView ({
+	image: "Gallery/" + galleryFiles[0],
+	width: "100%"
+});
+
+galleryView.add(galleryImage);
+
+
+var changeImage = Ti.UI.createButton({
+	backgroundColor: "#DBCEAC",
+	title : 'Change Image',
+	color : '#000',
+	font : {fontFamily : 'Ariel',fontWeight : 'regular',fontSize : 18},
+	borderRadius: 5,
+	borderWidth: 1,
+	height: "10%",
+	width: "50%",
+	left: "25%",
+	right: "25%",
+	bottom: "2%",
+	textAlign : 'center'
+});
+
+// Add to the parent view.
+galleryWin.add(changeImage);
+
+ var current = 0;
+
+var random = function() {
+	if(i === galleryFiles.length-1){
+		i = 0;
+		galleryImage.image = galleryFiles[0];
+	}else{
+		i++;
+		galleryImage.image = galleryFiles[i];
+	}
+	console.log(galleryImage.image);
+};
+
+
+
+changeImage.addEventListener("click", function(){
+	random;
+});
+
+
+Ti.include("Gallery.js");
+
+
+navWindow.open(); 

@@ -1,0 +1,157 @@
+var getDetail = function(){
+var playerWindow = Ti.UI.createWindow({
+	statusBarHidden: false,
+	statusBarStyle:Titanium.UI.iPhone.StatusBar.OPAQUE_BLACK,
+	backgroundImage: "Images/RED_HOME.jpg",
+	title: "Historic Players",
+	color: "C6011F",
+	top: 0
+});
+
+	var detailText = Ti.UI.createLabel({
+		text: this.details,
+		color: "#fff",
+		top: 30,
+		left: 15,
+		right: 15
+	});
+	detailWindow.add(detailText);
+	navWindow.openWindow(detailWindow);
+};
+
+// Create a Button.
+var playersButton = Ti.UI.createButton({
+	backgroundColor: "transparent",
+	backgroundImage: "Images/Clay.jpg",
+	title : 'Players',
+	font : {fontFamily : 'Arial',fontWeight : 'regular',fontSize : 18},
+	height : 44,
+	width : 250,
+	top : photoButton.top + photoButton.height + 10,
+	left : 0,
+	textAlign: "left"
+});
+mainWindow.add(playersButton);
+
+
+playersButton.addEventListener("click", function() {
+	navWindow.openWindow(playerWindow);
+});
+
+
+//JSON Object
+var players = {
+	"team":{
+		"teamTitle": "Cincinnati Reds",
+		"subTitle": "Historical Team Players",
+		"playerList":  [
+			{
+				"name": "Pete Rose",
+				"nickname": "Charlie Hustle", 
+				"description": "Outfielder, First Baseman and Third Baseman.",
+				hasChild: true,
+				classname: "tableRow"
+			}, 
+			{
+				"name": "Trip Lee", 
+				"description": "William Lee Barefield III is better known as Trip Lee.  As a child, Trip had dreams of being a professional athlete or famous rapper, so he began to hone his lyrical skills at the age of 12.  “I rapped about random stuff—how hot I was or how many girls I could pull,” Trip says.  But upon giving his life to Christ, at age 14, his focus changed from fortune, fame and women to serving and ministering the Gospel.",
+				hasChild: true,
+				classname: "tableRow"
+			}, 
+			{
+				"name": "Ambassador", 
+				"description": "They call him THE AMBASSADOR…The A-M-B-A! Born William “Duce” Branch, he represents what appears to be two clashing cultures—the Kingdom of God and hip hop.  The Ambassador stands as a shining example of how hip hop can be properly submitted to God while avoiding the typical corruptions commonly associated with it. This tricky navigation did not develop without a struggle, but God has clearly maneuvered this man who is destined to impact the music industry and the world. ",
+				hasChild: true,
+				classname: "tableRow"
+			}
+		]
+	}
+	};
+	
+
+
+
+var playerView = new Ti.UI.createTableView({
+	style:Titanium.UI.iPhone.TableViewStyle.GROUPED,
+    scrollable:false
+	});
+	playerWindow.add(playerView);
+	
+});
+	/*
+
+//Table Headers
+var makeUI = function(){
+	var spacing = 88;
+	for(n in artists){
+		var titleLabel = Ti.UI.createLabel({
+		text: artists[n].locationTitle,
+		top: spacing,
+		left: 0,
+		right: 0,
+		height: 25,
+		textAlign: "center",
+		font: {fontSize: 20, fontFamily: "Helvetica", fontWeight: "light"},
+		color: "white",
+		backgroundGradient: {
+        type: 'linear',
+        startPoint: { x: '50%', y: '0%' },
+        endPoint: { x: '50%', y: '100%' },
+        colors: [ { color: '#1AD6FD', offset: 0.0}, { color: '#1D62F0', offset: 1.0 }],
+    }
+		
+});
+	//Names for individual table
+	spacing = titleLabel.top + titleLabel.height + 10;
+	console.log(spacing);
+	for(m in artists[n].artistList){
+		var itemLabel = Ti.UI.createLabel({
+			text: artists[n].artistList[m].name,
+			details: artists[n].artistList[m].description,
+			backgroundColor: "white",
+			transparent: "true",
+			font: {fontSize: 18, fontFamily: "Helvetica", fontWeight: "light"},
+			color: "gray",
+			top: spacing,
+			left: 15,
+			right: 15,
+			height: 25	
+});
+		
+	mainWindow.add(itemLabel);
+		spacing =itemLabel.top + itemLabel.height + 2;
+		itemLabel.addEventListener("click", getDetail);
+	}
+	mainWindow.add(titleLabel);
+	spacing = itemLabel.top + itemLabel.height + 88;
+	
+	//Footer for individual table
+	spacing = itemLabel.top + itemLabel.height + 5;
+	console.log(spacing);
+	for(z in artists){
+		var subLabel = Ti.UI.createLabel({
+		text: artists[n].subTitle,
+		top: spacing,
+		left: 0,
+		right: 0,
+		height: 25,
+		textAlign: "center",
+		font: {fontSize: 16, fontFamily: "Helvetica", fontWeight: "light"},
+		color: "white",
+		backgroundColor: "transparent"	
+});
+		
+	}
+	mainWindow.add(subLabel);
+	spacing = itemLabel.top + itemLabel.height + 80;
+	
+	}
+};
+
+
+
+makeUI();
+
+*/
+
+

@@ -1,0 +1,84 @@
+// Create a Button.
+var playersButton = Ti.UI.createButton({
+	backgroundColor: "transparent",
+	backgroundImage: "Images/Clay.jpg",
+	title : 'Players',
+	font : {fontFamily : 'Ariel',fontWeight : 'regular',fontSize : 18},
+	height : 44,
+	width : 250,
+	top : photoButton.top + photoButton.height + 10,
+	left : 0,
+	textAlign: "left"
+});
+mainWindow.add(playersButton);
+
+// Create a Button.
+var otherButton = Ti.UI.createButton({
+	backgroundColor: "transparent",
+	backgroundImage: "Images/Clay.jpg",
+	title : 'Game Trivia',
+	font : {fontFamily : 'Ariel',fontWeight : 'regular',fontSize : 18},
+	height : 44,
+	width : 300,
+	top : playersButton.top + playersButton.height + 10,
+	left : 0,
+	textAlign: "left"
+});
+mainWindow.add(otherButton);
+
+
+
+
+/* var galleryLabel = Ti.UI.createLabel({
+	text: "Artist Gallery",
+	backgroundColor: "transparent",
+	color: "white",
+	font: {fontSize: 16, fontFamily: "Helvetica", fontWeight: "light"},
+}); */
+
+//galleryView.add(galleryLabel);
+
+/* var openGallery = function(){
+	galleryWin.open();
+}; */
+
+
+
+
+/*
+var changeImage = function(){
+	if(counter === galleryFiles.length-1){
+		counter = 0;
+		galleryView.image = galleryFiles[0];
+	} else {
+		counter ++;
+		galleryView.image = galleryFiles[counter];
+	}
+	console.log(galleryView.image);
+};
+
+var start = function(){
+	alert("Red's Photo Gallery.");
+	change = setInterval(changeImage,4500);
+	status = "start";
+};
+
+var stop = function(){
+	alert("Gallery Stopped.");
+	change = setInterval(changeImage,4500);
+	status = "stop";
+};
+
+var toggle = function(){
+	if(status === "stop"){
+	start();
+	}else{
+		stop();	
+	}
+}; 
+
+// Listen for click events.
+galleryWin.addEventListener('click', toggle);
+	start();
+
+*/

@@ -24,7 +24,7 @@ var artists = {
 			}
 		]
 	},
-	
+
 
 	"artistsS": {
 		"locationTitle": "Southern Rappers",
@@ -55,7 +55,7 @@ var artists = {
 var getDetail = function(){
 	var detailWindow = Ti.UI.createWindow({
 		title: this.text,
-		
+
 			});
 	var detailText = Ti.UI.createLabel({
 		text: this.details,
@@ -87,7 +87,7 @@ var makeUI = function(){
         endPoint: { x: '50%', y: '100%' },
         colors: [ { color: '#1AD6FD', offset: 0.0}, { color: '#1D62F0', offset: 1.0 }],
     }
-		
+
 });
 	//Names for individual table
 	spacing = titleLabel.top + titleLabel.height + 10;
@@ -105,14 +105,14 @@ var makeUI = function(){
 			right: 15,
 			height: 25	
 });
-		
+
 	mainWindow.add(itemLabel);
 		spacing =itemLabel.top + itemLabel.height + 2;
 		itemLabel.addEventListener("click", getDetail);
 	}
 	mainWindow.add(titleLabel);
 	spacing = itemLabel.top + itemLabel.height + 88;
-	
+
 	//Footer for individual table
 	spacing = itemLabel.top + itemLabel.height + 5;
 	console.log(spacing);
@@ -128,11 +128,11 @@ var makeUI = function(){
 		color: "white",
 		backgroundColor: "transparent"	
 });
-		
+
 	}
 	mainWindow.add(subLabel);
 	spacing = itemLabel.top + itemLabel.height + 80;
-	
+
 	}
 };
 

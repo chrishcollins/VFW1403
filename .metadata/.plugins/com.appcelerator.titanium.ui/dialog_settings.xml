@@ -2,4 +2,7 @@
 <section name="Workbench">
 	<section name="generic-module-distribution-dialog">
 	</section>
+	<section name="IMPORT_WIZARD_SECTION">
+		<item value="/Users/chriscollins/Desktop/MDVBS/VFW/Projects/Collins_Chris_Project4" key="IMPORT_PATH_INPUT"/>
+	</section>
 </section>

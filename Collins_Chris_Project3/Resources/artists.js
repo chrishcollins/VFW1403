@@ -23,7 +23,7 @@ var logoView = Ti.UI.createView({
 	backgroundImage: "OtherImages/GlassTxt.png",
 	height: 100,
 	width: 320,
-	top: 50
+	top: 30
 });
 
 mainWindow.add(enterButton, logoView);
@@ -82,8 +82,8 @@ var viewContainer = Ti.UI.createScrollView({
 	backgroundColor: "transparent",
 });
 
-for(var i=0; i<imageFiles.length; i++){
-	var view = Ti.UI.createView({
+for(var i=0, j=imageFiles.length; i<j; i++){
+	var view = Ti.UI.createImageView({
 		backgroundColor: "transparent",
 		borderColor: "transparent",
 		borderSize: 1,
@@ -96,7 +96,7 @@ for(var i=0; i<imageFiles.length; i++){
 
 var newImageView = Ti.UI.createImageView({
 	image: "images/" + imageFiles[i],
-	title: imageFiles[i],
+	//title: imageFiles[i],
 	top: 0,
 	height: 100,
 	width: 100,
